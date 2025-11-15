@@ -154,70 +154,70 @@ export default function Navigation() {
       </nav>
 
       {/* Mobile menu overlay - backdrop BEHIND menu */}
-      {menuOpen && (
-        <>
-          {/* Backdrop - lower z-index */}
-          <div
-            className="md:hidden fixed inset-0 bg-black/50 z-40 transition-opacity duration-300"
-            onClick={() => setMenuOpen(false)}
-            aria-hidden="true"
-          />
+    {menuOpen && (
+  <>
+    {/* Backdrop - lower z-index */}
+    <div
+      className="md:hidden fixed inset-0 bg-black/50 z-40 transition-opacity duration-300"
+      onClick={() => setMenuOpen(false)}
+      aria-hidden="true"
+    />
 
-          {/* Menu panel - higher z-index */}
-          <div className="md:hidden fixed inset-y-0 right-0 w-full sm:w-80 bg-white z-50 shadow-2xl overflow-auto">
-            {/* Close button in header */}
-            <div className="flex justify-between items-center p-4 border-b border-gray-100">
-              <button
-                type="button"
-                onClick={navigateToHome}
-                className="font-serif font-bold text-xl text-primary-dark hover:text-yellow-600 transition-colors"
-                aria-label="Go to home"
-              >
-                Sabu Kottotty
-              </button>
-              <button
-                type="button"
-                onClick={() => setMenuOpen(false)}
-                className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
-                aria-label="Close menu"
-              >
-                <FaTimes size={24} />
-              </button>
-            </div>
+    {/* Menu panel - higher z-index */}
+    <div className="md:hidden fixed inset-y-0 right-0 w-full sm:w-80 bg-white z-50 shadow-2xl overflow-auto">
+      {/* Close button in header */}
+      <div className="flex justify-between items-center p-4 border-b border-gray-100">
+        <button
+          type="button"
+          onClick={navigateToHome}
+          className="font-serif font-bold text-xl text-primary-dark hover:text-yellow-600 transition-colors"
+          aria-label="Go to home"
+        >
+          Sabu Kottotty
+        </button>
+        <button
+          type="button"
+          onClick={() => setMenuOpen(false)}
+          className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+          aria-label="Close menu"
+        >
+          <FaTimes size={24} />
+        </button>
+      </div>
 
-            {/* Menu items */}
-            <div className="container mx-auto px-6 py-8">
-              <div className="flex flex-col gap-2">
-                {sections.map((section) => (
-                  <button
-                    key={section}
-                    type="button"
-                    onClick={() => closeMenuAndScroll(section)}
-                    className={`text-left text-xl font-medium py-4 px-4 rounded-lg transition-all duration-200 ${
-                      activeSection === section
-                        ? "bg-accent-yellow/10 text-accent-yellow border-l-4 border-accent-yellow"
-                        : "text-gray-800 hover:bg-gray-50 hover:border-l-4 hover:border-gray-200"
-                    }`}
-                  >
-                    {section.charAt(0).toUpperCase() + section.slice(1)}
-                  </button>
-                ))}
-              </div>
+      {/* Menu items - Centered */}
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-6 py-8">
+        <div className="flex flex-col gap-2 w-full max-w-sm">
+          {sections.map((section) => (
+            <button
+              key={section}
+              type="button"
+              onClick={() => closeMenuAndScroll(section)}
+              className={`text-center text-xl font-medium py-4 px-4 rounded-lg transition-all duration-200 ${
+                activeSection === section
+                  ? "bg-accent-yellow/10 text-accent-yellow border-l-4 border-accent-yellow"
+                  : "text-gray-800 hover:bg-gray-50 hover:border-l-4 hover:border-gray-200"
+              }`}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </button>
+          ))}
+        </div>
 
-              {/* Contact CTA in mobile menu */}
-              <div className="mt-8 px-4">
-                <button
-                  type="button"
-                  onClick={() => closeMenuAndScroll("contact")}
-                  className="w-full bg-primary-dark text-white font-semibold py-3 px-6 rounded-full hover:bg-gray-800 transition-all duration-300"
-                >
-                  Contact Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
+        {/* Contact CTA in mobile menu - Centered */}
+        <div className="mt-8 w-full max-w-sm">
+          <button
+            type="button"
+            onClick={() => closeMenuAndScroll("contact")}
+            className="w-full bg-primary-dark text-white font-semibold py-3 px-6 rounded-full hover:bg-gray-800 transition-all duration-300 text-center"
+          >
+            Contact Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </>
+)}
     </>
   );
 }
