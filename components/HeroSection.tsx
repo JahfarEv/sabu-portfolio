@@ -109,7 +109,7 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-16">
           <button
             onClick={() => scrollToSection("services")}
-            className="group relative w-full sm:w-auto bg-linear-to-br from-accent-yellow to-yellow-500 text-[#0a1c2b] font-bold py-5 px-12 rounded-2xl shadow-2xl hover:shadow-accent-yellow/40 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+            className="group relative w-full sm:w-auto bg-yellow-500 text-[#0a1c2b] font-bold py-5 px-12 rounded-2xl shadow-2xl hover:shadow-accent-yellow/40 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
           >
             <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-yellow-400 to-accent-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="relative z-10 flex items-center justify-center gap-3 text-lg">
